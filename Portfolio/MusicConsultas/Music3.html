@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modificación de Registro</title>
+    <link rel="stylesheet" type="text/css" href="Music.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Registros</a>
+                <ul class="submenu" id="submenuTabla"> 
+                    <li><a href="Music.html">Alta de Registro</a></li>
+                    <li><a href="Music2.html">Baja de Registro</a></li>
+                    <li><a href="Music3.html">Modificación de Registro</a></li>
+                    <li><a href="Consultas.html">Consultas</a></li>
+                </ul>
+            </li>     
+            <li><a href="Music4.html">Transacción de consulta</a></li>
+            <li><a href="Music5.html">Venta Automática</a></li>
+            <li>
+                <a href="#">Tablas</a>
+                <ul class="submenu" id="submenuTabla"> 
+                    <li><a href="Tabla.php">Tabla DVDs</a></li>
+                    <li><a href="TablaVentas.php">Tabla Ventas</a></li>
+                </ul>
+            </li> 
+            <li id="botonCambioTema">
+                <button id="cambiarTema">Cambiar Tema</button>
+            </li>           
+        </ul>
+    </nav>
+
+    <h1>Modificación de Registro</h1>
+    
+    <form action="Music3.php" method="post">
+        <input type="hidden" name="modificarDVD" value="1" required>
+        <label for="ID_DVDMod">ID del DVD a modificar:</label>
+        <input type="text" id="ID_DVDMod" name="ID_DVD" required><br><br>
+
+        <label for="nuevoNombre">Nuevo nombre:</label>
+        <input type="text" id="nuevoNombre" name="nuevoNombre" required><br><br>
+
+        <label for="nuevoArtista">Nuevo Artista:</label>
+        <input type="text" id="nuevoArtista" name="nuevoArtista" required><br><br>
+
+        <label for="nuevoEstilo">Nuevo Estilo Musical:</label>
+        <input type="text" id="nuevoEstilo" name="nuevoEstilo" required><br><br>
+
+        <label for="nuevoAnio">Nuevo Año:</label>
+        <input type="text" id="nuevoAnio" name="nuevoAnio" required><br><br>
+
+        <label for="nuevoNumCanciones">Nuevo Número de Canciones:</label>
+        <input type="text" id="nuevoNumCanciones" name="nuevoNumCanciones" required><br><br>
+
+        <label for="nuevoTitulosCanciones">Nuevos Títulos de Canciones (separados por comas):</label>
+        <input type="text" id="nuevoTitulosCanciones" name="nuevoTitulosCanciones" required><br><br>
+
+        <label for="nuevaCantidad">Nueva Cantidad:</label>
+        <input type="text" id="nuevaCantidad" name="nuevaCantidad" required><br><br>
+
+        <label for="nuevoPrecio">Nuevo Precio:</label>
+        <input type="text" id="nuevoPrecio" name="nuevoPrecio" required><br><br>
+
+        <label for="nuevoDescuento">Nuevo Descuento:</label>
+        <input type="text" id="nuevoDescuento" name="nuevoDescuento" required><br><br>
+
+        <label for="nuevoIVA">Nuevo IVA:</label>
+        <input type="text" id="nuevoIVA" name="nuevoIVA" required><br><br>
+        
+        <input type="submit" value="Modificar">
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 Alejandro Luna Lillo y Daniel Barrios Delgado</p>
+        </div>
+    </footer>
+    <script src="Music3.js"></script>
+    <script src="Music2.js"></script>
+    <script src="Music.js"></script>
+</body>
+</html>

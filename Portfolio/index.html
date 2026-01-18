@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Nombre - Portfolio</title>
+  <link rel="stylesheet" href="PortfolioCSS.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="scrollCtrl">
+  <div class="container">
+    <nav class="sidebar">
+      <br><br><br><br><br>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <br>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <br>
+        <li><a href="#servicios">Servicios</a></li>
+        <br>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <br>
+        <li><a href="#contacto">Contacto</a></li>
+        <br><br><br><br>
+        <li id="botonCambioTema">
+          <button id="cambiarTema">Cambiar Tema</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <section id="inicio">
+        <header>
+          <div class="profile">
+            <img src="imagenes/1.jpg" alt="Tu foto">
+            <div class="description">
+              <h1>Patricia Fopiani Román</h1>
+              <p>Como desarrolladora de aplicaciones web, mi pasión por el mundo de la informática es innegable. Mi objetivo es consolidarme 
+                como una profesional en el campo de la informática, especializándome como técnica de aplicaciones web. Me esfuerzo por alcanzar
+                un alto nivel de experiencia y conocimientos en el diseño, desarrollo y mantenimiento de aplicaciones web, con el fin de brindar 
+                soluciones eficientes y efectivas a los desafíos tecnológicos del mundo actual. Estoy comprometida con mi crecimiento profesional,
+                y busco continuar aprendiendo y perfeccionando mis habilidades para ser un recurso valioso en esta área en constante evolución.</p>
+              <a href="imagenes/CV.pdf" download>Descargar CV</a>
+            </div>
+          </div>
+        </header>
+      </section>
+      <br><br>
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="skills">
+          <div class="skill">
+            <h3>HTML/CSS</h3>
+            <div class="skill-bar">
+              <div class="skill-level html"><span class="percentage">100%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="skill-bar">
+              <div class="skill-level javascript"><span class="percentage">90%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>AngularJS/React</h3>
+            <div class="skill-bar">
+              <div class="skill-level angularjs"><span class="percentage">70%</span></div>
+            </div>
+          </div>
+          <div class="skill">
+            <h3>Bootstrap</h3>
+            <div class="skill-bar">
+              <div class="skill-level php"><span class="percentage">85%</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br><br>
+      <section id="servicios">
+        <h2>Mis servicios</h2>
+        <div class="services">
+          <div class="service">
+            <img src="imagenes/6.png" alt="Diseño web">
+            <h3>Diseño web</h3>
+            <p>Ofrezco soluciones de diseño web que combinan estética visual con funcionalidad excepcional. 
+                Creo sitios atractivos, fáciles de usar y completamente adaptados a las necesidades del cliente.</p>
+          </div>
+          <div class="service">
+            <img src="imagenes/5.png" alt="Diseño gráfico">
+            <h3>Diseño gráfico</h3>
+            <p>Mis servicios de diseño gráfico dan vida a ideas a través de imágenes y conceptos visuales. Desde
+                 logotipos hasta materiales de marketing, cada diseño está meticulosamente creado para transmitir la identidad y el mensaje de la marca.</p>
+          </div>
+          <div class="service">
+            <img src="imagenes/4.png" alt="Diseño responsable">
+            <h3>Diseño responsable</h3>
+            <p>Mi enfoque en el diseño responsable se centra en la creación de soluciones sostenibles y éticas como pagina web para todos los dispositivos. Busco implementar
+                 prácticas que tengan un impacto positivo en el mundo, desde elecciones de diseño hasta prácticas de producción.</p>
+          </div>
+          <div class="service">
+            <img src="imagenes/7.png" alt="Base de datos">
+            <h3>Base de datos</h3>
+            <p>Ofrezco soluciones integrales de base de datos para almacenar, organizar y acceder a la información de manera eficiente.
+                 Desde el modelado hasta la implementación, garantizo bases de datos sólidas y confiables para las necesidades de tu proyecto.</p>
+          </div>
+        </div>
+      </section>
+      <br>
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <h3>Ejemplos de web:</h3> 
+        <div class="project-grid">
+          <center>
+            <div class="project">
+              <a href="FormulariosAvanzados-AlejandroLuna.html">
+                <img src="https://vanacco.com/wp-content/uploads/2020/06/Form-1.jpg" alt="Proyecto 1">
+              </a>
+            </div>
+          </center>
+          <center>
+            <div class="project">
+              <a href="cartitas/cartitas/index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/SpongeBob_SquarePants_character.png" alt="Proyecto 1">
+              </a>
+            </div>
+          </center>
+          <center>
+            <div class="project">
+              <a href="./Simpsons/index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/The_Simpsons_yellow_logo.svg" alt="Proyecto 1">
+              </a>
+            </div>
+          </center>
+        </div>
+      </section>
+      <br><br>
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+          <p><b>Edad:</b> 24</p>
+          <p><b>Número de teléfono:</b> 640242577</p>
+          <p><b>Correo electrónico:</b> patrifr2517@gmail.com</p>
+        </div>
+        <form action="enviar.php" method="POST">
+          <input type="text" name="nombre" placeholder="Nombre" required>
+          <input type="email" name="correo" placeholder="Correo electrónico" required>
+          <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+          <textarea name="mensaje" placeholder="Mensaje"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </div>
+  </div>
+  <script src="PortfolioJS.js"></script>
+</body>
+</html>

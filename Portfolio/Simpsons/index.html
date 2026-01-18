@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Springfield Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="logo">Springfield</a>
+    <div class="favorites">
+      <button id="fav-btn" class="heart-btn">❤️</button>
+      <div id="fav-dropdown" class="dropdown hidden"></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Directorio de Springfield</h1>
+      <p>Personajes, lugares y tus favoritos de la ciudad más famosa de la TV.</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <section>
+      <h2>Familia Simpson</h2>
+      <div id="characters" class="grid"></div>
+    </section>
+
+    <section>
+      <h2>Localizaciones míticas</h2>
+      <div id="locations" class="grid"></div>
+    </section>
+  </main>
+    <a href="../index.html" class="btn btn-secondary">Volver</a>
+    <br> </br>
+  <footer class="footer">
+    <p>Proyecto de portfolio · Inspirado en Los Simpsons</p>
+  </footer>
+
+  <script src="js/data-characters.js"></script>
+  <script src="js/data-locations.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

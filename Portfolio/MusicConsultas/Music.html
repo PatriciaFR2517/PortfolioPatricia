@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alta de Registro</title>
+    <link rel="stylesheet" type="text/css" href="Music.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Registros</a>
+                <ul class="submenu" id="submenuTabla"> 
+                    <li><a href="Music.html">Alta de Registro</a></li>
+                    <li><a href="Music2.html">Baja de Registro</a></li>
+                    <li><a href="Music3.html">Modificación de Registro</a></li>
+                    <li><a href="Consultas.html">Consultas</a></li>
+                </ul>
+            </li>     
+            <li><a href="Music4.html">Transacción de consulta</a></li>
+            <li><a href="Music5.html">Venta Automática</a></li>
+            <li>
+                <a href="#">Tablas</a>
+                <ul class="submenu" id="submenuTabla"> 
+                    <li><a href="Tabla.php">Tabla DVDs</a></li>
+                    <li><a href="TablaVentas.php">Tabla Ventas</a></li>
+                </ul>
+            </li>   
+            <li id="botonCambioTema">
+                <button id="cambiarTema">Cambiar Tema</button>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Alta de Registro</h1>
+
+    <form action="Music.php" method="post">
+        <input type="hidden" name="altaDVD" value="1">
+
+        <label for="ID_DVD">ID DVD:</label>
+        <input type="text" id="ID_DVD" name="ID_DVD" required><br><br>
+
+        <label for="nombreDVD">Nombre DVD:</label>
+        <input type="text" id="nombreDVD" name="nombreDVD" required><br><br>
+        
+        <label for="artistaDVD">Artista:</label>
+        <input type="text" id="artistaDVD" name="artistaDVD" required><br><br>
+
+        <label for="estiloDVD">Estilo Musical:</label>
+        <input type="text" id="estiloDVD" name="estiloDVD" required><br><br>
+
+        <label for="anioDVD">Año:</label>
+        <input type="text" id="anioDVD" name="anioDVD" required><br><br>
+
+        <label for="numCancionesDVD">Número de Canciones:</label>
+        <input type="text" id="numCancionesDVD" name="numCancionesDVD" required><br><br>
+
+        <label for="titulosCancionesDVD">Títulos de Canciones (separados por comas):</label>
+        <input type="text" id="titulosCancionesDVD" name="titulosCancionesDVD" required><br><br>
+
+        <label for="cantidadDVD">Cantidad:</label>
+        <input type="text" id="cantidadDVD" name="cantidadDVD" required><br><br>
+
+        <label for="precioDVD">Precio:</label>
+        <input type="text" id="precioDVD" name="precioDVD" required><br><br>
+
+        <label for="descuentoDVD">Descuento:</label>
+        <input type="text" id="descuentoDVD" name="descuentoDVD" required><br><br>
+
+        <label for="ivaDVD">IVA:</label>
+        <input type="text" id="ivaDVD" name="ivaDVD" required><br><br>
+        
+        <input type="submit" value="Agregar">
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 Alejandro Luna Lillo y Daniel Barrios Delgado</p>
+        </div>
+    </footer>
+    <script src="Music3.js"></script>
+    <script src="Music2.js"></script>
+    <script src="Music.js"></script> 
+</body>
+</html>

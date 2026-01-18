@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego de Cartas</title>
+</head>
+<body>
+    <header>
+        <h1> PIEDRA PAPEL TIJERAS</h1>
+    </header>
+    <main id="cartasContainer" >
+        <div class="carta" id="carta1" onclick="jugar(1)">
+            <div class="face" id="front1">
+                <img src="otrolado.jpg" alt="Carta 1 Anverso">
+            </div>
+            
+        </div>
+        <div class="carta" id="carta2" onclick="jugar(2)">
+            <div class="face" id="front2">
+                <img src="otrolado.jpg" alt="Carta 2 Anverso">
+            </div>
+            
+        </div>
+        <div class="carta" id="carta3" onclick="jugar(3)">
+            <div class="face" id="front3">
+                <img src="otrolado.jpg" alt="Carta 3 Anverso">
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <div id="mensajes"></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+.noticia {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  #cargarMas {
+    display: block;
+    background-color: rgb(42, 38, 38);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: rgb(42, 38, 38);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #oculta {
+    display: none;
+  }
+
+  .noticia {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .imagen-noticia {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 125px;
+    height: 125px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .noticia > p {
+    margin-right: 180px; 
+  }
+  

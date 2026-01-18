@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="fruteriaApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Noticias - Frutería Dulces Delicias</title>
+  <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+  <header>
+    <h1>Blog de Frutas</h1>
+  </header>
+
+  <main ng-controller="contenidoController">
+    <section class="noticia">
+      <h2>Manzana</h2>
+      <p>Las manzanas son frutas deliciosas y nutritivas que vienen en una variedad de colores y sabores. Son una excelente fuente de fibra y vitamina C. Además de ser versátiles para cocinar, también se pueden comer crudas como refrigerio saludable.</p>
+      <img src="../WEB IDEA JS/imagenes/1.jpg" alt="Manzana" class="imagen-noticia">
+    </section>
+
+    <section class="noticia">
+      <h2>Plátano</h2>
+      <p>Los plátanos son frutas tropicales que son ricas en potasio y ofrecen muchos beneficios para la salud. Son fáciles de pelar y son una buena fuente de energía. Los plátanos son versátiles y se pueden agregar a batidos, postres o simplemente comer solos.</p>
+      <img src="../WEB IDEA JS/imagenes/2.jpg" alt="Plátano" class="imagen-noticia">
+    </section>
+
+    <section class="noticia">
+      <h2>Naranja</h2>
+      <p>Las naranjas son cítricos llenos de vitamina C y son conocidas por su sabor refrescante y jugoso. Además de ser una excelente fuente de antioxidantes, las naranjas son ideales para hacer jugos naturales y son un componente clave para una dieta equilibrada.</p>
+      <img src="../WEB IDEA JS/imagenes/3.jpg" alt="Naranja" class="imagen-noticia">
+    </section>
+
+    <section ng-show="noticiasExtras > 0" class="noticia">
+      <h2>Pera</h2>
+      <p>Las peras son frutas jugosas y dulces que son una excelente fuente de fibra dietética. Están disponibles en una variedad de texturas y colores. Las peras se pueden consumir frescas o pueden ser un ingrediente en ensaladas y postres.</p>
+      <img src="../WEB IDEA JS/imagenes/4.jpg" alt="Pera" class="imagen-noticia">
+    </section>
+    
+    <section ng-show="noticiasExtras > 0" class="noticia">
+      <h2>Uva</h2>
+      <p>Las uvas son pequeñas frutas redondas que vienen en racimos y son conocidas por su sabor dulce y jugoso. Son una buena fuente de antioxidantes y se pueden disfrutar frescas o como ingrediente en jugos, mermeladas o incluso vinos.</p>
+      <img src="../WEB IDEA JS/imagenes/5.jpg" alt="Uva" class="imagen-noticia">
+    </section>
+
+    <div id="contenido-principal"></div>
+    <br>
+    <button id="cargarMas" ng-click="cargarMasNoticias()">
+      {{textoBoton}}
+    </button>    
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-sanitize.js"></script>
+  <script src="JS.js"></script>
+</body>
+</html>

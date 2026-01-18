@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Consultas</title>
+        <link rel="stylesheet" type="text/css" href="Music.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Registros</a>
+                    <ul class="submenu" id="submenuTabla"> 
+                        <li><a href="Music.html">Alta de Registro</a></li>
+                        <li><a href="Music2.html">Baja de Registro</a></li>
+                        <li><a href="Music3.html">Modificación de Registro</a></li>
+                        <li><a href="Consultas.html">Consultas</a></li>
+                    </ul>
+                </li>     
+                <li><a href="Music4.html">Transacción de consulta</a></li>
+                <li><a href="Music5.html">Venta Automática</a></li>
+                <li>
+                    <a href="#">Tablas</a>
+                    <ul class="submenu" id="submenuTabla"> 
+                        <li><a href="Tabla.php">Tabla DVDs</a></li>
+                        <li><a href="TablaVentas.php">Tabla Ventas</a></li>
+                    </ul>
+                </li> 
+                <li id="botonCambioTema">
+                    <button id="cambiarTema">Cambiar Tema</button>
+                </li>           
+            </ul>
+        </nav>
+
+        <h1>Consultas</h1>
+
+        <center>
+            <div class="boton-container">
+                <button class="BotonParaConsulta"  onclick="toggleForm('formTodosContainer')">Mostrar/ocultar Consulta Todos</button>
+                <div class="formulario-container" id="formTodosContainer">
+                    <form action="MusicConsultas.php" method="post" id="formTodos">
+                        <input type="hidden" name="consultaTipo" value="todos">
+                        <input type="submit" value="Consultar todos los registros">
+                    </form>
+                </div>
+            </div>
+
+            <div class="boton-container">
+                <button class="BotonParaConsulta" onclick="toggleForm('formWhereContainer')">Mostrar/ocultar Consulta Where</button>
+                <div class="formulario-container" id="formWhereContainer">
+                    <form action="MusicConsultas.php" method="post" id="formWhere" class="hidden">
+                        <input type="hidden" name="consultaTipo" value="where">
+                        <label for="campoWhere">Campo para condición WHERE:</label>
+                        <select type="text" id="campoWhere" name="campoWhere" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <label for="campoBusqueda">Buscar por:</label>
+                        <input type="text" id="campoBusqueda" name="campoBusqueda" required>
+                        <input type="submit" value="Consultar con condición WHERE">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="boton-container">
+                <button class="BotonParaConsulta" onclick="toggleForm('formOrderContainer')">Mostrar/ocultar Consulta Order</button>
+                <div class="formulario-container" id="formOrderContainer">
+                    <form action="MusicConsultas.php" method="post" id="formOrder" class="hidden">
+                        <input type="hidden" name="consultaTipo" value="order">
+                        <label for="campoOrder">Campo para ORDER BY:</label>
+                        <select type="text" id="campoOrder" name="campoOrder" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Consultar con ORDER BY">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="boton-container">
+                <button class="BotonParaConsulta"  onclick="toggleForm('formWhere_OrderContainer')">Mostrar/ocultar Consulta Where + Order</button>
+                <div class="formulario-container" id="formWhere_OrderContainer">
+                    <form action="MusicConsultas.php" method="post" id="formWhereOrder" class="hidden">
+                        <input type="hidden" name="consultaTipo" value="where_order">
+                        <label for="campoWhere">Campo para condición WHERE:</label>
+                        <select type="text" id="campoWhere" name="campoWhere" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <label for="campoOrder">Campo para ORDER BY:</label>
+                        <select type="text" id="campoOrder" name="campoOrder" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <label for="campoBusqueda">Buscar por:</label>
+                        <input type="text" id="campoBusqueda" name="campoBusqueda" required>
+                        <input type="submit" value="Consultar con WHERE + ORDER BY">
+                    </form>
+                </div>
+            </div>
+            
+            <div class="boton-container">
+                <button class="BotonParaConsulta"  onclick="toggleForm('formWhere_Order_LimitContainer')">Mostrar/ocultar Consulta Where + Order + Limit</button>
+                <div class="formulario-container" id="formWhere_Order_LimitContainer">
+                    <form action="MusicConsultas.php" method="post" id="formWhereOrderLimit" class="hidden">
+                        <input type="hidden" name="consultaTipo" value="where_order_limit">
+                        <label for="campoWhere">Campo para condición WHERE:</label>
+                        <select type="text" id="campoWhere" name="campoWhere" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <label for="campoOrder">Campo para ORDER BY:</label>
+                        <select type="text" id="campoOrder" name="campoOrder" required>
+                            <option value="ID_DVD">ID DVD</option>
+                            <option value="nombreDVD">Nombre DVD</option>
+                            <option value="ArtistaDVD">Artista DVD</option>
+                            <option value="EstiloMusicalDVD">Estilo musical DVD</option>
+                            <option value="AnioDVD">Año DVD</option>
+                            <option value="NumeroCancionesDVD">Numero caniones DVD</option>
+                            <option value="TitulosCancionesDVD">Titulo canciones DVD</option>
+                            <option value="CantidadDVD">Cantidad DVD</option>
+                            <option value="PrecioDVD">Precio DVD</option>
+                            <option value="DescuentoDVD">Decuento DVD</option>
+                            <option value="IVADVD">IVA DVD</option>
+                        </select>
+                        <br><br>
+                        <label for="valorLimit">Valor para LIMIT:</label>
+                        <input type="text" id="valorLimit" name="valorLimit" required>
+                        <br><br>
+                        <input type="submit" value="Consultar con WHERE + ORDER BY + LIMIT">
+                    </form>
+                </div>
+            </div>
+        </center>
+
+        <footer>
+            <div class="footer-content">
+                <p>© 2023 Alejandro Luna Lillo y Daniel Barrios Delgado</p>
+            </div>
+        </footer>
+        
+        <script src="Music.js"></script>
+        <script src="Music3.js"></script>
+        <script src="Music2.js"></script>
+    </body>
+</html>

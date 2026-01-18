@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alejandro Luna Lillo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+    background-color: #f5f0f0;
+    font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 50px;
+    }
+
+    h1 {
+    color: #007bff;
+    }
+
+    .form-control {
+    border-radius: 0;
+    }
+
+    .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    }
+
+    #resultados {
+    border-top: 2px solid #007bff;
+    padding-top: 30px;
+    margin-top: 30px;
+    }
+
+    #myChart {
+    margin-top: 30px;
+    }
+
+    /* Estilo para los resultados del formulario */
+    #resultados h4 {
+    color: #007bff;
+    }
+
+    #resultados p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    }
+
+    /* Estilo para el gráfico */
+    .chart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+
+    /* Estilo para los mensajes de error en el formulario (si es necesario) */
+    .error-message {
+    color: #dc3545;
+    margin-top: 5px;
+    font-size: 14px;
+    }
+  </style>
+</head>
+
+<body ng-app="miApp" ng-controller="miController">
+
+  <div class="container mt-4">
+    <h1 class="text-center">Formulario Avanzado</h1>
+
+    <!-- Formulario -->
+    <form id="miFormulario">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" ng-model="datos.nombre" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="apellido">Apellido:</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" ng-model="datos.apellido" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rol">Rol:</label>
+        <input type="text" class="form-control" id="rol" name="rol" ng-model="datos.rol" required>
+      </div>
+      <div class="form-group">
+        <label for="altura">Altura:</label>
+        <input type="number" class="form-control" id="altura" name="altura" ng-model="datos.altura" required>
+      </div>
+      <button type="button" class="btn btn-primary" ng-click="mostrarDatos()">Mostrar Datos</button>
+    </form>
+
+    <!-- Resultados del formulario -->
+    <div id="resultados" class="mt-4">
+      <h4>Datos del Formulario:</h4>
+      <p>Nombre: {{ datos.nombre | uppercase }}</p>
+      <p>Apellido: {{ datos.apellido | lowercase }}</p>
+      <p>Rol: {{ datos.rol | capitalize }}</p>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="mt-4">
+      <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('miApp', []);
+    app.controller('miController', function ($scope) {
+      $scope.datos = {
+        rol: '' // Inicializar con un valor predeterminado
+      };
+
+      $scope.mostrarDatos = function () {
+        // Lógica adicional para mostrar datos
+        actualizarGrafico();
+        limpiarFormulario();
+      };
+
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function actualizarGrafico() {
+        // Obtener valores del formulario
+        var nombre = $scope.datos.nombre;
+        var apellido = $scope.datos.apellido;
+        var rol = $scope.datos.rol;
+        var altura = parseInt($scope.datos.altura) || 0;
+
+        // Limite de altura hasta 200
+        altura = Math.min(altura, 200);
+
+        // Actualizar datos del gráfico
+        myChart.data.labels.push(nombre + ' ' + apellido + ' (' + rol + ')');
+        myChart.data.datasets[0].data.push(altura);
+        myChart.data.datasets[0].backgroundColor.push(getRandomColor());
+        myChart.update();
+      }
+
+      function limpiarFormulario() {
+        // Limpiar campos del formulario
+        $scope.datos = {
+          rol: '' // Restablecer el valor predeterminado
+        };
+      }
+    });
+
+    app.filter('capitalize', function () {
+      return function (input) {
+        return input.charAt(0).toUpperCase() + input.slice(1);
+      }
+    });
+
+    var xValues = [];
+    var yValues = [];
+    var barColors = [];
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 200 // Altura máxima hasta 200
+            }
+          }]
+        },
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Altura de Personas"
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
